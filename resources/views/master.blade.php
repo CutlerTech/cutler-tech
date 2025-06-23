@@ -44,7 +44,7 @@
             @yield('content')
         </main>
         <footer>
-            <p>Copyright CutlerTech 2025</p>
+            <p>Copyright CutlerTech 2025 &copy;</p>
         </footer>
     </body>
 </html>

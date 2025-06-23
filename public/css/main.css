@@ -3,3 +3,49 @@
     padding: 0;
     box-sizing: border-box;
 }
+header {
+    padding: 2rem 0;
+    background-color: aqua;
+}
+#navbar {
+    display: flex;
+    justify-content: space-around;
+}
+#main-nav ul {
+    display: flex;
+    flex-direction: row;
+}
+#main-nav li {
+    list-style: none;
+    margin: 0 0.5rem;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+main {
+    padding: 2rem;
+}
+main h1 {
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: auto;
+    margin-top: 2rem;
+    border: 3px solid black;
+    padding: 1rem 1.5rem;
+}
+form input, form label, form textarea {
+    margin-bottom: 1rem;
+}
+form input, form textarea {
+    border-radius: 10px;
+    padding: 0.5rem 0.25rem;
+}
+footer {
+    margin: 2rem 0;
+    text-align: center;
+}
