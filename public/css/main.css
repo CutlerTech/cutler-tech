@@ -15,7 +15,7 @@ header {
     display: flex;
     flex-direction: row;
 }
-#main-nav li {
+#main-nav li, #auth-nav li {
     list-style: none;
     margin: 0 0.5rem;
 }
@@ -28,6 +28,10 @@ main {
 }
 main h1 {
     text-align: center;
+}
+main p {
+    text-align: center;
+    padding-top: 2rem;
 }
 form {
     display: flex;

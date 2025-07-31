@@ -3,11 +3,11 @@
 @section('content')
 <h1>Project Requests</h1>
 <form action="" method="POST">
-    <label for="name">Name</label>
+    <label for="name">Name *</label>
     <input type="text" name="name" id="name" placeholder="Your name">
-    <label for="goal">What are you hoping to accomplish?</label>
+    <label for="goal">What are you hoping to accomplish? *</label>
     <input type="text" name="goal" placeholder="Goal">
-    <label for="email">Email Address</label>
+    <label for="email">Email Address *</label>
     <input type="email" name="email" id="email" placeholder="Email Address">
     <label for="company-name">Name of your company or business</label>
     <input type="text" name="company-name" placeholder="Company/Business Name">
@@ -23,5 +23,6 @@
     <input type="text" name="challenge" placeholder="Biggest Challenge">
     <label for="comments">Anything else</label>
     <textarea name="comments" id="comments" placeholder="Anything Else?"></textarea>
+    <input type="submit" name="submit" class="submit">
 </form>
 @endsection
