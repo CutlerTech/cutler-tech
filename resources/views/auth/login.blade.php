@@ -25,9 +25,7 @@
                 <input type="password" name="password" id="password" required>
             </div>
             <div class="form-group">
-                <label class="checkbox-label">
-                    <input type="checkbox" name="remember"> Remember me
-                </label>
+                <label class="checkbox-label"><input type="checkbox" name="remember"> Remember me</label>
             </div>
             <button type="submit" class="btn btn-primary btn-full" style="color: black;">Login</button>
         </form>
@@ -81,9 +79,6 @@
         align-items: center;
         gap: 8px;
         font-weight: normal;
-    }
-    .btn-full {
-        width: 100%;
     }
     .auth-links {
         text-align: center;
