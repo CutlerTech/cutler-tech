@@ -12,14 +12,11 @@
             </form>
         </div>
     </div>
-
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-
-    <!-- Statistics Cards -->
     <div class="stats-grid">
         <div class="stat-card">
             <h3>{{ $totalRequests }}</h3>
@@ -38,14 +35,11 @@
             <p>Completed</p>
         </div>
     </div>
-
-    <!-- Recent Requests -->
     <div class="recent-requests">
         <div class="section-header">
             <h2>Recent Requests</h2>
             <a href="{{ route('requests.index') }}" class="btn btn-primary">View All</a>
         </div>
-        
         @if($recentRequests->count() > 0)
             <div class="requests-table">
                 <table>
@@ -85,8 +79,6 @@
             </div>
         @endif
     </div>
-
-    <!-- Quick Actions -->
     <div class="quick-actions">
         <h2>Quick Actions</h2>
         <div class="action-buttons">
@@ -95,125 +87,120 @@
         </div>
     </div>
 </div>
-
 <style>
-.dashboard {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-.stat-card {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.stat-card h3 {
-    font-size: 2em;
-    margin: 0 0 10px 0;
-    color: #333;
-}
-
-.stat-card.pending h3 { color: #f39c12; }
-.stat-card.in-progress h3 { color: #3498db; }
-.stat-card.completed h3 { color: #27ae60; }
-
-.recent-requests {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
-}
-
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.requests-table table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.requests-table th,
-.requests-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.requests-table th {
-    background-color: #f8f9fa;
-    font-weight: 600;
-}
-
-.badge {
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    font-weight: 500;
-}
-
-.badge-warning { background-color: #fff3cd; color: #856404; }
-.badge-info { background-color: #d1ecf1; color: #0c5460; }
-.badge-success { background-color: #d4edda; color: #155724; }
-.badge-danger { background-color: #f8d7da; color: #721c24; }
-
-.quick-actions {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.action-buttons {
-    display: flex;
-    gap: 15px;
-}
-.empty-state {
-    text-align: center;
-    padding: 40px;
-    color: #666;
-}
-
-.alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-}
-
-.alert-success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
+    .dashboard {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .user-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    .stat-card {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    .stat-card h3 {
+        font-size: 2em;
+        margin: 0 0 10px 0;
+        color: #333;
+    }
+    .stat-card.pending h3 {
+        color: #f39c12;
+    }
+    .stat-card.in-progress h3 {
+        color: #3498db;
+    }
+    .stat-card.completed h3 {
+        color: #27ae60;
+    }
+    .recent-requests {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+    }
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .requests-table table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .requests-table th, .requests-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .requests-table th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+    }
+    .badge {
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.8em;
+        font-weight: 500;
+    }
+    .badge-warning {
+        background-color: #fff3cd; color: #856404;
+    }
+    .badge-info {
+        background-color: #d1ecf1; color: #0c5460;
+    }
+    .badge-success {
+        background-color: #d4edda; color: #155724;
+    }
+    .badge-danger {
+        background-color: #f8d7da; color: #721c24;
+    }
+    .quick-actions {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .action-buttons {
+        display: flex;
+        gap: 15px;
+    }
+    .empty-state {
+        text-align: center;
+        padding: 40px;
+        color: #666;
+    }
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+    }
+    .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
 </style>
 @endsection

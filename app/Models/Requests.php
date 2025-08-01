@@ -14,16 +14,12 @@ class Requests extends Model {
         'challenge',
         'comments'
     ];
-    protected $casts = [
-        'employees' => 'integer'
-    ];
+    protected $casts = ['employees' => 'integer'];
     const STATUS_PENDING = 'pending';
     const STATUS_IN_PROGRESS = 'in_progress';
     const STATUS_COMPLETED = 'completed';
     const STATUS_CANCELLED = 'cancelled';
-    protected $attributes = [
-        'status' => self::STATUS_PENDING,
-    ];
+    protected $attributes = ['status' => self::STATUS_PENDING];
     /**
      * Get available status options
      */
@@ -32,7 +28,7 @@ class Requests extends Model {
             self::STATUS_PENDING => 'Pending',
             self::STATUS_IN_PROGRESS => 'In Progress',
             self::STATUS_COMPLETED => 'Completed',
-            self::STATUS_CANCELLED => 'Cancelled',
+            self::STATUS_CANCELLED => 'Cancelled'
         ];
     }
     /**
@@ -44,7 +40,7 @@ class Requests extends Model {
             self::STATUS_IN_PROGRESS => 'badge-info',
             self::STATUS_COMPLETED => 'badge-success',
             self::STATUS_CANCELLED => 'badge-danger',
-            default => 'badge-secondary',
+            default => 'badge-secondary'
         };
     }
 }

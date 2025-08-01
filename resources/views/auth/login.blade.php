@@ -7,20 +7,18 @@
         @if($errors->any())
             <div class="alert alert-danger">
                 @foreach($errors->all() as $error)
-                    <p>{{ $error }}</p>
+                    <p>{{$error}}</p>
                 @endforeach
             </div>
         @endif
         @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
+            <div class="alert alert-success">{{session('success')}}</div>
         @endif
-        <form action="{{ route('login.post') }}" method="POST">
+        <form action="{{route('login.post')}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" name="email" id="email" value="{{ old('email') }}" required>
+                <input type="email" name="email" id="email" value="{{old('email')}}" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
