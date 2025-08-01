@@ -12,8 +12,8 @@
     <body>
         <header>
             <nav id="navbar">
-                <div id="logo">
-                    <a href="{{route('home')}}"><img src="" alt="Logo"></a>
+                <div>
+                    <a href="{{route('home')}}"><img src="{{asset('images/logo.svg')}}" alt="Logo" id="logo"></a>
                 </div>
                 <div id="main-nav">
                     <ul>
