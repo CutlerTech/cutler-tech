@@ -64,13 +64,13 @@ form input, form label, form textarea {
 form input, form textarea {
     border-radius: 10px;
     padding: 0.5rem 0.25rem;
+    border: 2px solid black;
 }
-
 .submit {
     background-color: #FF6800;
 }
 footer {
     text-align: center;
     background-color: #00FF81;
-    padding: 1rem 0;
+    padding: 2rem 0 1rem;
 }
