@@ -2,7 +2,7 @@
 @section('title', 'Requests')
 @section('content')
 <h1>Project Requests</h1>
-<form action="" method="POST">
+<form action="{{route('requests.store')}}" method="POST">
     <label for="name">Name *</label>
     <input type="text" name="name" id="name" placeholder="Your name">
     <label for="goal">What are you hoping to accomplish? *</label>
@@ -25,4 +25,11 @@
     <textarea name="comments" id="comments" placeholder="Anything Else?"></textarea>
     <input type="submit" name="submit" class="submit">
 </form>
+<style>
+    form {
+        width: 25%;
+        border: 3px solid black;
+        background-color: #FFA900;
+    }
+</style>
 @endsection

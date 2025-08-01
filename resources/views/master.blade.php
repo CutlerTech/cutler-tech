@@ -20,7 +20,7 @@
                         <li><a href="{{route('about')}}">About Us</a></li>
                         <li><a href="{{route('skills')}}">Skills and Tech Stacks</a></li>
                         <li><a href="{{route('projects')}}">Projects</a></li>
-                        <li><a href="{{route('requests')}}">Requests</a></li>
+                        <li><a href="{{route('requests.create')}}">Requests</a></li>
                         @auth
                             @if (Auth::user())
                                 <li><a href="{{route('dashboard')}}">Dashboard</a></li>
@@ -31,9 +31,9 @@
                 <div id="auth-nav">
                     @auth
                         <li>
-                            <form action="" method="POST">
+                            <form action="{{route('logout')}}" method="POST">
                                 @csrf
-                                <button type="submit">Logout</button>
+                                <button type="submit" class="btn btn-outline">Logout</button>
                             </form>
                         </li>
                     @endauth

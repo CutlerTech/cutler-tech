@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('phone')->nullable();
             $table->text('challenge')->nullable();
             $table->text('comments')->nullable();
+            $table->enum('status', ['pending', 'in_progress', 'completed', 'cancelled'])->default('pending');
             $table->timestamps();
         });
     }
