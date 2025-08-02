@@ -48,9 +48,7 @@
                                 <td>{{$request->name}}</td>
                                 <td>{{$request->company_name ?? 'N/A'}}</td>
                                 <td>{{Str::limit($request->goal, 50)}}</td>
-                                <td>
-                                    <span class="badge {{$request->getStatusBadgeClass()}}">{{ucfirst(str_replace('_', ' ', $request->status))}}</span>
-                                </td>
+                                <td><span class="badge {{$request->getStatusBadgeClass()}}">{{ucfirst(str_replace('_', ' ', $request->status))}}</span></td>
                                 <td>{{$request->created_at->format('M j, Y')}}</td>
                                 <td><a href="{{route('requests.show', $request)}}" class="btn btn-sm btn-outline">View</a></td>
                             </tr>
