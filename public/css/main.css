@@ -95,3 +95,17 @@ footer {
 .btn-full {
     width: 100%;
 }
+#main-nav ul li a.active {
+    background-color: #FFA900;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+#main-nav ul li a:hover {
+    background-color: #FF6800;
+    color: black;
+    text-decoration: none;
+    padding: 1rem;
+    transition: background-color 1s ease;
+    border-radius: 5px;
+}

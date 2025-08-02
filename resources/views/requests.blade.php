@@ -2,7 +2,20 @@
 @section('title', 'Requests')
 @section('content')
 <h1>Project Requests</h1>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+@if(session('error'))
+    <div class="alert alert-danger">{{session('error')}}</div>
+@endif
 <form action="{{route('requests.store')}}" method="POST">
+    @csrf
     <label for="name">Name *</label>
     <input type="text" name="name" id="name" placeholder="Your name">
     <label for="goal">What are you hoping to accomplish? *</label>

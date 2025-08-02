@@ -7,7 +7,7 @@
         @if($errors->any())
             <div class="alert alert-danger">
                 @foreach($errors->all() as $error)
-                    <p>{{ $error }}</p>
+                    <p>{{$error}}</p>
                 @endforeach
             </div>
         @endif
@@ -15,11 +15,11 @@
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" value="{{ old('name') }}" required>
+                <input type="text" name="name" id="name" value="{{old('name')}}" required>
             </div>
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" name="email" id="email" value="{{ old('email') }}" required>
+                <input type="email" name="email" id="email" value="{{old('email')}}" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>

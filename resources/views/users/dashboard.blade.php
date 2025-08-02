@@ -2,43 +2,32 @@
 @section('title', 'Dashboard')
 @section('content')
 <div class="dashboard">
-    <div class="dashboard-header">
-        <h1>Project Dashboard</h1>
-        <div class="user-info">
-            <span>Welcome back, {{ Auth::user()->name }}!</span>
-            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-                @csrf
-                <button type="submit" class="btn btn-outline">Logout</button>
-            </form>
-        </div>
-    </div>
+    <div class="dashboard-header"><h1>Project Dashboard</h1></div>
     @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
+        <div class="alert alert-success">{{session('success')}}</div>
     @endif
     <div class="stats-grid">
         <div class="stat-card">
-            <h3>{{ $totalRequests }}</h3>
+            <h3>{{$totalRequests}}</h3>
             <p>Total Requests</p>
         </div>
         <div class="stat-card pending">
-            <h3>{{ $pendingRequests }}</h3>
+            <h3>{{$pendingRequests}}</h3>
             <p>Pending</p>
         </div>
         <div class="stat-card in-progress">
-            <h3>{{ $inProgressRequests }}</h3>
+            <h3>{{$inProgressRequests}}</h3>
             <p>In Progress</p>
         </div>
         <div class="stat-card completed">
-            <h3>{{ $completedRequests }}</h3>
+            <h3>{{$completedRequests}}</h3>
             <p>Completed</p>
         </div>
     </div>
     <div class="recent-requests">
         <div class="section-header">
             <h2>Recent Requests</h2>
-            <a href="{{ route('requests.index') }}" class="btn btn-primary">View All</a>
+            <a href="{{route('requests.index')}}" class="btn btn-primary">View All</a>
         </div>
         @if($recentRequests->count() > 0)
             <div class="requests-table">
@@ -56,34 +45,28 @@
                     <tbody>
                         @foreach($recentRequests as $request)
                             <tr>
-                                <td>{{ $request->name }}</td>
-                                <td>{{ $request->company_name ?? 'N/A' }}</td>
-                                <td>{{ Str::limit($request->goal, 50) }}</td>
+                                <td>{{$request->name}}</td>
+                                <td>{{$request->company_name ?? 'N/A'}}</td>
+                                <td>{{Str::limit($request->goal, 50)}}</td>
                                 <td>
-                                    <span class="badge {{ $request->getStatusBadgeClass() }}">
-                                        {{ ucfirst(str_replace('_', ' ', $request->status)) }}
-                                    </span>
+                                    <span class="badge {{$request->getStatusBadgeClass()}}">{{ucfirst(str_replace('_', ' ', $request->status))}}</span>
                                 </td>
-                                <td>{{ $request->created_at->format('M j, Y') }}</td>
-                                <td>
-                                    <a href="{{ route('requests.show', $request) }}" class="btn btn-sm btn-outline">View</a>
-                                </td>
+                                <td>{{$request->created_at->format('M j, Y')}}</td>
+                                <td><a href="{{route('requests.show', $request)}}" class="btn btn-sm btn-outline">View</a></td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
         @else
-            <div class="empty-state">
-                <p>No requests yet. <a href="{{ route('requests.create') }}">Share the request form</a> to get started!</p>
-            </div>
+            <div class="empty-state"><p>No requests yet. <a href="{{route('requests.create')}}">Share the request form</a> to get started!</p></div>
         @endif
     </div>
     <div class="quick-actions">
         <h2>Quick Actions</h2>
         <div class="action-buttons">
-            <a href="{{ route('requests.index') }}" class="btn btn-primary">Manage All Requests</a>
-            <a href="{{ route('requests.create') }}" class="btn btn-outline">View Request Form</a>
+            <a href="{{route('requests.index')}}" class="btn btn-primary">Manage All Requests</a>
+            <a href="{{route('requests.create')}}" class="btn btn-outline">View Request Form</a>
         </div>
     </div>
 </div>

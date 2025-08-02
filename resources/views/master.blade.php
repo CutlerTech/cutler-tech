@@ -17,21 +17,22 @@
                 </div>
                 <div id="main-nav">
                     <ul>
-                        <li><a href="{{route('about')}}">About Us</a></li>
-                        <li><a href="{{route('skills')}}">Skills and Tech Stacks</a></li>
-                        <li><a href="{{route('projects')}}">Projects</a></li>
-                        <li><a href="{{route('requests.create')}}">Requests</a></li>
+                        <li><a href="{{route('about')}}" class="{{request()->routeIs('about') ? 'active' : ''}}">About Us</a></li>
+                        <li><a href="{{route('skills')}}" class="{{request()->routeIs('skills') ? 'active' : ''}}">Skills and Tech Stacks</a></li>
+                        <li><a href="{{route('projects')}}" class="{{request()->routeIs('projects') ? 'active' : ''}}">Projects</a></li>
+                        <li><a href="{{route('requests.create')}}" class="{{request()->routeIs('requests.create') ? 'active' : ''}}">Requests</a></li>
                         @auth
                             @if (Auth::user())
-                                <li><a href="{{route('dashboard')}}">Dashboard</a></li>
+                                <li><a href="{{route('dashboard')}}" class="{{request()->routeIs('dashboard') ? 'active' : ''}}">Dashboard</a></li>
                             @endif
                         @endauth
                     </ul>
                 </div>
                 <div id="auth-nav">
                     @auth
+                        <span>Welcome back, {{Auth::user()->name}}!</span>
                         <li>
-                            <form action="{{route('logout')}}" method="POST">
+                            <form action="{{route('logout')}}" method="POST" id="logout">
                                 @csrf
                                 <button type="submit" class="btn btn-outline">Logout</button>
                             </form>
@@ -47,4 +48,14 @@
             <p>Copyright CutlerTech 2025 &copy;</p>
         </footer>
     </body>
+    <style>
+        #logout {
+            background-color: #00F0FF;
+            border: none;
+        }
+        #logout button {
+            margin: auto;
+            background-color: #00FF81;
+        }
+    </style>
 </html>
