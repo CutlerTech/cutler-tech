@@ -46,7 +46,7 @@
         align-items: center;
         border: 3px solid black;
         margin: 2rem auto 0;
-        width: 20%;
+        width: 30%;
         padding: 0 2rem;
         background-color: #ffa900;
     }
@@ -60,7 +60,7 @@
     .card-lists {
         display: flex;
         flex-direction: row;
-        gap: 2rem;
+        gap: 3rem;
         margin-top: 1rem;
     }
 </style>
