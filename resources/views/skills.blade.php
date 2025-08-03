@@ -3,7 +3,8 @@
 @section('content')
 <h1>Team Skillset and Tech Stack</h1>
 <div class="skill-card">
-    <h4 class="title">Alex Cutler - CEO/Owner</h4>
+    <h4 class="title">Alex Cutler</h4>
+    <small><b>CEO/Owner</b></small>
     <div class="card-lists">
         <div class="left-side">
             <b>Languages</b>
@@ -46,15 +47,21 @@
         border: 3px solid black;
         margin: 2rem auto 0;
         width: 20%;
+        padding: 0 2rem;
+        background-color: #ffa900;
     }
     .title {
-        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+    }
+    .title ~ small b {
+        padding: 0.5rem 2rem;
         border-bottom: 2px solid black;
     }
     .card-lists {
         display: flex;
         flex-direction: row;
         gap: 2rem;
+        margin-top: 1rem;
     }
 </style>
 @endsection
