@@ -46,7 +46,7 @@
         </main>
         <footer>
             <p>Copyright CutlerTech 2025 &copy;</p>
-            <p>For inquiry questions, please reach out over email to <a id="email" href="mailto:calexcutler@gmail.com">calexcutler@gmail.com</a>.</p>
+            <p>For inquiry questions, please reach out over email to <a id="footer-email" href="mailto:calexcutler@gmail.com">calexcutler@gmail.com</a>.</p>
         </footer>
     </body>
     <style>
@@ -58,7 +58,7 @@
             margin: auto;
             background-color: #00FF81;
         }
-        #email {
+        #footer-email {
             color: #FF6800;
         }
     </style>
