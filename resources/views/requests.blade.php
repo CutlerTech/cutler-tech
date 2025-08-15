@@ -14,7 +14,7 @@
 @if(session('error'))
     <div class="alert alert-danger">{{session('error')}}</div>
 @endif
-<form action="{{route('requests.store')}}" method="POST">
+<form action="{{route('requests.store')}}" method="POST" id="requests-form">
     @csrf
     <label for="name">Name *</label>
     <input type="text" name="name" id="name" placeholder="Your name">
