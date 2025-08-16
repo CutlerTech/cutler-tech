@@ -84,7 +84,7 @@
         margin-top: 20px;
     }
     .auth-links a {
-        color: #007bff;
+        color: white;
         text-decoration: none;
     }
     .auth-links a:hover {
