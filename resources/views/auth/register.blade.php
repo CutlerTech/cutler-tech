@@ -29,7 +29,7 @@
                 <label for="password_confirmation">Confirm Password</label>
                 <input type="password" name="password_confirmation" id="password_confirmation" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">Register</button>
+            <button type="submit" class="btn btn-primary btn-full" style="color: black">Register</button>
         </form>
         <div class="auth-links">
             <p>Already have an account? <a href="{{route('login')}}">Login here</a></p>
@@ -72,7 +72,7 @@
     .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="password"] {
         width: 100%;
         padding: 10px;
-        border: 1px solid #ddd;
+        border: 1px solid black;
         border-radius: 4px;
         box-sizing: border-box;
     }
