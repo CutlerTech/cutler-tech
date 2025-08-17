@@ -15,6 +15,11 @@
                 <div>
                     <a href="{{route('home')}}"><img src="{{asset('images/logo.svg')}}" alt="Logo" id="logo"></a>
                 </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <div id="main-nav">
                     <ul>
                         <li><a href="{{route('about')}}" class="{{request()->routeIs('about') ? 'active' : ''}}">About Us</a></li>
@@ -62,4 +67,32 @@
             color: #FF6800;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mainNav = document.getElementById('main-nav');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                mainNav.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link (optional)
+            const navLinks = mainNav.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    mainNav.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside (optional)
+            document.addEventListener('click', function(event) {
+                if (!hamburger.contains(event.target) && !mainNav.contains(event.target)) {
+                    hamburger.classList.remove('active');
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </html>

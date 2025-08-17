@@ -19,6 +19,31 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 0 2rem;
+    position: relative;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 #logo {
     width: 100px;
@@ -111,6 +136,58 @@ footer {
 }
 #requests-form {
     width: 80%;
+}
+@media screen and (max-width: 992px) {
+    #navbar {
+        flex-wrap: wrap;
+        padding: 0 1rem;
+    }
+    .hamburger {
+        display: flex;
+        order: 3;
+    }
+    #main-nav {
+        width: 100%;
+        order: 4;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    #main-nav.active {
+        max-height: 300px;
+    }
+    #main-nav ul {
+        flex-direction: column;
+        width: 100%;
+        background-color: #00F0FF;
+        margin-top: 1rem;
+        border-radius: 5px;
+    }
+    #main-nav li {
+        margin: 0;
+        width: 100%;
+    }
+    #main-nav li a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+    #main-nav ul li a.active, #main-nav ul li a:hover {
+        background-color: #FF6800;
+        margin: 0;
+        border-radius: 0;
+    }
+    #auth-nav {
+        order: 2;
+        margin-left: auto;
+    }
+    #auth-nav span {
+        display: none;
+    }
+    #requests-form {
+        width: 100%;
+    }
 }
 @media screen and (max-width: 768px) {
     #requests-form {
