@@ -3,7 +3,7 @@
 @section('content')
 <h1>Meet the Team</h1>
 <div class="about-card">
-    <img src="" alt="Alex Cutler Headshot">
+    <img src="{{asset('images/Alex_Headshot.jpg')}}" alt="Alex Cutler Headshot" class="headshot">
     <h4>Alex Cutler</h4>
     <b>CEO/Owner</b>
     <p>Alex is the software brains behind CutlerTech.</p>
@@ -24,6 +24,11 @@
     .about-card p {
         margin: 0;
         padding: 1rem 0 0;
+    }
+    .headshot {
+        width: auto;
+        height: 300px;
+        border-radius: 5px;
     }
 </style>
 @endsection
