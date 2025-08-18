@@ -24,7 +24,6 @@
                     <ul>
                         <li><a href="{{route('about')}}" class="{{request()->routeIs('about') ? 'active' : ''}}">About Us</a></li>
                         <li><a href="{{route('skills')}}" class="{{request()->routeIs('skills') ? 'active' : ''}}">Skills and Tech Stacks</a></li>
-                        <li><a href="{{route('projects')}}" class="{{request()->routeIs('projects') ? 'active' : ''}}">Projects</a></li>
                         <li><a href="{{route('requests.create')}}" class="{{request()->routeIs('requests.create') ? 'active' : ''}}">Requests</a></li>
                         @auth
                             @if (Auth::user())
