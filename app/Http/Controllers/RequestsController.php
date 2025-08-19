@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\Requests;
+use App\Models\User;
+use App\Notifications\NewRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -15,7 +17,6 @@ class RequestsController extends Controller {
      * Store a new project request
      */
     public function store(Request $request): RedirectResponse {
-        // Validate the incoming request
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'goal' => 'required|string',
@@ -27,11 +28,10 @@ class RequestsController extends Controller {
             'phone' => 'nullable|string|max:20',
             'challenge' => 'nullable|string',
             'comments' => 'nullable|string'
-        ]);
-        // Create the new request record
-        Requests::create($validatedData);
-        // Redirect back with success message
-        return redirect()->back()->with('success', 'Your project request has been submitted successfully!');
+        ]);// Validate the incoming request
+        $newRequest = Requests::create($validatedData);// Create the new request record
+        $this->sendNewRequestNotification($newRequest);// Send notification to admin users
+        return redirect()->back()->with('success', 'Your project request has been submitted successfully!');// Redirect back with success message
     }
     /**
      * Display all project requests (admin view)
@@ -62,5 +62,44 @@ class RequestsController extends Controller {
     public function destroy(Requests $request): RedirectResponse {
         $request->delete();
         return redirect()->route('requests.index')->with('success', 'Request deleted successfully!');
+    }
+    /**
+     * Display notifications for authenticated user
+     */
+    public function notifications(): View {
+        $user = auth()->user(); //Figure out why VS Code is throwing an error.
+        $notifications = $user->notifications()->paginate(10);
+        return view('notifications.index', compact('notifications'));
+    }
+    /**
+     * Mark notification as read
+     */
+    public function markAsRead($notificationId): RedirectResponse {
+        $user = auth()->user(); //Figure out why VS Code is throwing an error.
+        $notification = $user->notifications()->find($notificationId);
+        if ($notification) {
+            $notification->markAsRead();
+        }
+        return redirect()->back();
+    }
+    /**
+     * Mark all notifications as read
+     */
+    public function markAllAsRead(): RedirectResponse {
+        auth()->user()->unreadNotifications->markAsRead(); //Figure out why VS Code is throwing an error.
+        return redirect()->back()->with('success', 'All notifications marked as read.');
+    }
+    /**
+     * Send new request notification to admin users
+     */
+    private function sendNewRequestNotification(Requests $request): void {
+        try {
+            $adminUsers = User::where('is_admin', true)->get();
+            foreach ($adminUsers as $user) {// Send notification to each admin user
+                $user->notify(new NewRequest($request));
+            }
+        } catch (\Exception $e) {// Log the error but don't break the request submission
+            \Log::error('Failed to send new request notification: ' . $e->getMessage());
+        }
     }
 }

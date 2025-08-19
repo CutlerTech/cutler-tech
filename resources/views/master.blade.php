@@ -28,6 +28,14 @@
                         @auth
                             @if (Auth::user())
                                 <li><a href="{{route('dashboard')}}" class="{{request()->routeIs('dashboard') ? 'active' : ''}}">Dashboard</a></li>
+                                <li class="notification-menu">
+                                    <a href="{{route('notifications.index')}}" class="{{request()->routeIs('notifications.*') ? 'active' : ''}}">
+                                        <i class="fas fa-bell">🔔</i>
+                                        @if(Auth::user()->unreadNotifications->count() > 0)
+                                            <span class="notification-badge">{{Auth::user()->unreadNotifications->count()}}</span>
+                                        @endif
+                                    </a>
+                                </li>
                             @endif
                         @endauth
                     </ul>
@@ -64,6 +72,31 @@
         }
         #footer-email {
             color: #FF6800;
+        }
+        /* Notification Styles */
+        .notification-menu {
+            position: relative;
+        }
+        
+        .notification-badge {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background-color: #ff4757;
+            color: white;
+            border-radius: 50%;
+            min-width: 18px;
+            height: 18px;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .alert {
+            margin: 0;
+            border-radius: 0;
         }
     </style>
     <script>

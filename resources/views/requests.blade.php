@@ -25,7 +25,7 @@
     <label for="company-name">Name of your company or business</label>
     <input type="text" name="company-name" placeholder="Company/Business Name">
     <label for="website">Current Website</label>
-    <input type="text" name="website" placeholder="Website">
+    <input type="url" name="website" placeholder="Website">
     <label for="employees">Number of Employees</label>
     <input type="number" min="1" name="employees" id="employees" placeholder="Number of Employees">
     <label for="location">Location</label>

@@ -1,6 +1,40 @@
 <?php
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
+/**
+ * @property int $id
+ * @property string $name
+ * @property string $goal
+ * @property string $email
+ * @property string|null $company_name
+ * @property string|null $website
+ * @property int|null $employees
+ * @property string|null $location
+ * @property string|null $phone
+ * @property string|null $challenge
+ * @property string|null $comments
+ * @property string $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests whereChallenge($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests whereComments($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests whereCompanyName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests whereEmployees($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests whereGoal($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests whereLocation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Requests whereWebsite($value)
+ * @mixin \Eloquent
+ */
 class Requests extends Model {
     protected $fillable = [
         'name',
