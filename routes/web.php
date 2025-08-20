@@ -26,8 +26,9 @@ Route::middleware('auth')->group(function (): void {// Protected routes (require
     Route::get('/admin/requests/{request}', [RequestsController::class, 'show'])->name('requests.show');
     Route::delete('/admin/requests/{request}', [RequestsController::class, 'destroy'])->name('requests.destroy');
     Route::patch('/admin/requests/{request}/status', [RequestsController::class, 'updateStatus'])->name('requests.updateStatus');
-    // Notification routes
-    Route::get('/notifications', [RequestsController::class, 'notifications'])->name('notifications.index');
+    Route::get('/notifications', [RequestsController::class, 'notifications'])->name('notifications.index');// Notification routes
     Route::get('/notifications/{notification}/mark-read', [RequestsController::class, 'markAsRead'])->name('notifications.mark-read');
     Route::get('/notifications/mark-all-read', [RequestsController::class, 'markAllAsRead'])->name('notifications.mark-all-read');
+    Route::delete('/notifications/{notification}', [RequestsController::class, 'deleteNotification'])->name('notifications.delete');
+    Route::delete('/notifications', [RequestsController::class, 'deleteAllNotifications'])->name('notifications.delete-all');
 });

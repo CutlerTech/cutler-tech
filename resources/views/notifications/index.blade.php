@@ -6,13 +6,39 @@
         <div class="col-12">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h1>Notifications</h1>
-                @if(auth()->user()->unreadNotifications->count() > 0)
+                @if(auth()->user()->unreadNotifications->count() > 0 || $notifications->count() > 0)
                     <div>
-                        <span class="badge badge-primary mr-2">{{auth()->user()->unreadNotifications->count()}} unread</span>
-                        <a href="{{route('notifications.mark-all-read')}}" class="btn btn-sm btn-outline-primary">Mark All as Read</a>
+                        @if(auth()->user()->unreadNotifications->count() > 0)
+                            <span class="badge badge-primary mr-2">{{auth()->user()->unreadNotifications->count()}} unread</span>
+                            <a href="{{route('notifications.mark-all-read')}}" class="btn btn-sm btn-outline-primary mr-2">Mark All as Read</a>
+                        @endif
+                        @if($notifications->count() > 0)
+                            <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#deleteAllModal">
+                                <i class="fas fa-trash">Delete All</i>
+                            </button>
+                        @endif
                     </div>
                 @endif
             </div>
+            
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span>&times;</span>
+                    </button>
+                </div>
+            @endif
+            
+            @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('error') }}
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span>&times;</span>
+                    </button>
+                </div>
+            @endif
+
             @if($notifications->count() > 0)
                 <div class="list-group">
                     @foreach($notifications as $notification)
@@ -50,6 +76,9 @@
                                         @if(!$notification->read_at)
                                             <a href="{{route('notifications.mark-read', $notification->id)}}" class="btn btn-sm btn-outline-secondary ml-1">Mark as Read</a>
                                         @endif
+                                        <button type="button" class="btn btn-sm btn-outline-danger ml-1" onclick="confirmDelete('{{$notification->id}}')">
+                                            <i class="fas fa-trash">Delete</i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +88,7 @@
                 <div class="d-flex justify-content-center mt-4">{{$notifications->links()}}</div>
             @else
                 <div class="text-center py-5">
-                    <i class="fas fa-bell fa-3x text-muted mb-3">🔔</i>
+                    <i class="fas fa-bell fa-3x text-muted mb-3"></i>
                     <h3 class="text-muted">No notifications yet</h3>
                     <p class="text-muted">When new requests come in, you'll see them here.</p>
                 </div>
@@ -67,6 +96,65 @@
         </div>
     </div>
 </div>
+
+<!-- Delete Single Notification Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Notification</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this notification? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <form id="deleteForm" method="POST" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete All Notifications Modal -->
+<div class="modal fade" id="deleteAllModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete All Notifications</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete all notifications? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <form method="POST" action="{{route('notifications.delete-all')}}" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete All</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function confirmDelete(notificationId) {
+    const deleteForm = document.getElementById('deleteForm');
+    deleteForm.action = '/notifications/' + notificationId;
+    $('#deleteModal').modal('show');
+}
+</script>
+
 <style>
     .list-group-item-info {
         background-color: #e3f2fd;

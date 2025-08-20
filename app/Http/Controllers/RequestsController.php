@@ -102,4 +102,23 @@ class RequestsController extends Controller {
             \Log::error('Failed to send new request notification: ' . $e->getMessage());
         }
     }
+    /**
+     * Delete a specific notification
+     */
+    public function deleteNotification($notificationId): RedirectResponse {
+        $user = auth()->user();
+        $notification = $user->notifications()->find($notificationId);
+        if ($notification) {
+            $notification->delete();
+            return redirect()->back()->with('success', 'Notification deleted successfully.');
+        }
+        return redirect()->back()->with('error', 'Notification not found.');
+    }
+    /**
+     * Delete all notifications for the authenticated user
+     */
+    public function deleteAllNotifications(): RedirectResponse {
+        auth()->user()->notifications()->delete();
+        return redirect()->back()->with('success', 'All notifications deleted successfully.');
+    }
 }
