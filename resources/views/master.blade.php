@@ -76,11 +76,9 @@
         #footer-email {
             color: #FF6800;
         }
-        /* Notification Styles */
         .notification-menu {
             position: relative;
         }
-        
         .notification-badge {
             position: absolute;
             top: -8px;
@@ -96,7 +94,6 @@
             justify-content: center;
             font-weight: bold;
         }
-        
         .alert {
             margin: 0;
             border-radius: 0;
@@ -106,13 +103,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.getElementById('hamburger');
             const mainNav = document.getElementById('main-nav');
-            
             hamburger.addEventListener('click', function() {
                 hamburger.classList.toggle('active');
                 mainNav.classList.toggle('active');
             });
-            
-            // Close menu when clicking on a link (optional)
             const navLinks = mainNav.querySelectorAll('a');
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
@@ -120,8 +114,6 @@
                     mainNav.classList.remove('active');
                 });
             });
-            
-            // Close menu when clicking outside (optional)
             document.addEventListener('click', function(event) {
                 if (!hamburger.contains(event.target) && !mainNav.contains(event.target)) {
                     hamburger.classList.remove('active');

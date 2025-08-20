@@ -13,32 +13,17 @@
                             <a href="{{route('notifications.mark-all-read')}}" class="btn btn-sm btn-outline-primary mr-2">Mark All as Read</a>
                         @endif
                         @if($notifications->count() > 0)
-                            <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#deleteAllModal">
-                                <i class="fas fa-trash">Delete All</i>
-                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#deleteAllModal"><i class="fas fa-trash">Delete All</i></button>
                         @endif
                     </div>
                 @endif
             </div>
-            
             @if(session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
-                    <button type="button" class="close" data-dismiss="alert">
-                        <span>&times;</span>
-                    </button>
-                </div>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">{{session('success')}}<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button></div>
             @endif
-            
             @if(session('error'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ session('error') }}
-                    <button type="button" class="close" data-dismiss="alert">
-                        <span>&times;</span>
-                    </button>
-                </div>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">{{session('error')}}<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button></div>
             @endif
-
             @if($notifications->count() > 0)
                 <div class="list-group">
                     @foreach($notifications as $notification)
@@ -96,20 +81,14 @@
         </div>
     </div>
 </div>
-
-<!-- Delete Single Notification Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Delete Notification</h5>
-                <button type="button" class="close" data-dismiss="modal">
-                    <span>&times;</span>
-                </button>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>
-            <div class="modal-body">
-                Are you sure you want to delete this notification? This action cannot be undone.
-            </div>
+            <div class="modal-body">Are you sure you want to delete this notification? This action cannot be undone.</div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <form id="deleteForm" method="POST" style="display: inline;">
@@ -121,20 +100,14 @@
         </div>
     </div>
 </div>
-
-<!-- Delete All Notifications Modal -->
 <div class="modal fade" id="deleteAllModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Delete All Notifications</h5>
-                <button type="button" class="close" data-dismiss="modal">
-                    <span>&times;</span>
-                </button>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>
-            <div class="modal-body">
-                Are you sure you want to delete all notifications? This action cannot be undone.
-            </div>
+            <div class="modal-body">Are you sure you want to delete all notifications? This action cannot be undone.</div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <form method="POST" action="{{route('notifications.delete-all')}}" style="display: inline;">
@@ -146,15 +119,13 @@
         </div>
     </div>
 </div>
-
 <script>
-function confirmDelete(notificationId) {
-    const deleteForm = document.getElementById('deleteForm');
-    deleteForm.action = '/notifications/' + notificationId;
-    $('#deleteModal').modal('show');
-}
+    function confirmDelete(notificationId) {
+        const deleteForm = document.getElementById('deleteForm');
+        deleteForm.action = '/notifications/' + notificationId;
+        $('#deleteModal').modal('show');
+    }
 </script>
-
 <style>
     .list-group-item-info {
         background-color: #e3f2fd;
