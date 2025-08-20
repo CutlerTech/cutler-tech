@@ -6,6 +6,8 @@ use App\Notifications\NewRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Log;
+use Exception;
 class RequestsController extends Controller {
     /**
      * Display the requests form
@@ -98,8 +100,8 @@ class RequestsController extends Controller {
             foreach ($adminUsers as $user) {// Send notification to each admin user
                 $user->notify(new NewRequest($request));
             }
-        } catch (\Exception $e) {// Log the error but don't break the request submission
-            \Log::error('Failed to send new request notification: ' . $e->getMessage());
+        } catch (Exception $e) {// Log the error but don't break the request submission
+            Log::error('Failed to send new request notification: ' . $e->getMessage());
         }
     }
     /**
