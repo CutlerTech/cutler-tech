@@ -36,6 +36,7 @@
                     <li>MySQL</li>
                     <li>Laravel</li>
                     <li>Unity</li>
+                    <li>Wordpress</li>
                 </ul>
             </div>
         </div>
