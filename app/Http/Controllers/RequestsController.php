@@ -53,9 +53,10 @@ class RequestsController extends Controller {
     /**
      * Update request status
      */
-    public function updateStatus(Request $request, Requests $projectRequest): RedirectResponse {
-        $validatedData = $request->validate(['status' => 'required|in:pending,in_progress,completed,cancelled']);
-        $projectRequest->update($validatedData);
+    public function updateStatus(Request $httpRequest, Requests $request): RedirectResponse {
+        $validatedData = $httpRequest->validate(['status' => 'required|in:pending,in_progress,completed,cancelled']);
+        $request->status = $validatedData['status'];
+        $request->save();
         return redirect()->back()->with('success', 'Request status updated successfully!');
     }
     /**
