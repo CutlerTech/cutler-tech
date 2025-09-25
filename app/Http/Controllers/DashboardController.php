@@ -21,9 +21,7 @@ class DashboardController extends Controller {
         } else {
             $monthExpr = "strftime('%Y-%m', created_at)";
         }
-        $requestsByMonth = Requests::selectRaw("COUNT(*) as count, {$monthExpr} as month")
-            ->groupBy('month')->orderBy('month')->pluck('count', 'month');
-
+        $requestsByMonth = Requests::selectRaw("COUNT(*) as count, {$monthExpr} as month")->groupBy('month')->orderBy('month')->pluck('count', 'month');
         return view('users.dashboard', [
             'recentRequests' => $recentRequests,
             'totalRequests' => $totalRequests,
