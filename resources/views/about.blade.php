@@ -2,16 +2,33 @@
 @section('title', 'About Us')
 @section('content')
 <h1>Meet the Team</h1>
-<div class="about-card">
-    <img src="{{asset('images/Alex_Headshot.jpg')}}" alt="Alex Cutler Headshot" class="headshot">
-    <h4>Alex Cutler</h4>
-    <b>CEO/Owner</b>
-    <p>Alex is the software brains behind CutlerTech.</p>
+<div class="grid">
+    <div class="about-card">
+        <img src="{{asset('images/Alex_Headshot.jpg')}}" alt="Alex Cutler Headshot" class="headshot">
+        <h4>Alex Cutler</h4>
+        <b>CEO/Owner</b>
+        <p>Alex is the software brains behind CutlerTech.</p>
+    </div>
 </div>
 <style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+    }
     .about-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 3px solid black;
+        width: 30%;
+        margin: 2rem auto 0;
         text-align: center;
         padding: 1rem;
+        background-color: #ffa900;
+    }
+    .about-card img {
+        border: 1px solid black;
     }
     .about-card * {
         margin: 0.5rem;
@@ -23,7 +40,7 @@
     }
     .about-card p {
         margin: 0;
-        padding: 1rem 0 0;
+        padding: 1rem 0;
     }
     .headshot {
         width: auto;
