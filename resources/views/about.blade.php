@@ -35,7 +35,7 @@
     }
     .about-card h4 {
         border-top: 2px solid black;
-        width: 10%;
+        width: 50%;
         margin: 1rem auto 0.25rem;
     }
     .about-card p {
