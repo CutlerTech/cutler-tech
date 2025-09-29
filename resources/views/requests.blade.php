@@ -44,5 +44,36 @@
         border: 3px solid black;
         background-color: #FFA900;
     }
+    input.submit {
+        -webkit-appearance: none;
+        appearance: none;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin-top: 0.75rem;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+        box-shadow: 0 6px 0 rgba(0,0,0,0.12);
+        user-select: none;
+    }
+    input.submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 0 rgba(0,0,0,0.14);
+    }
+    input.submit:active, input.submit:focus {
+        transform: translateY(2px) scale(0.995);
+        box-shadow: inset 0 3px 0 rgba(0,0,0,0.12);
+        outline: none;
+    }
+    input.submit:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+    }
 </style>
 @endsection
