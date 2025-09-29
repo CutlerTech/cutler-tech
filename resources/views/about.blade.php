@@ -47,5 +47,27 @@
         height: 300px;
         border-radius: 5px;
     }
+    @media screen and (max-width: 1200px) {
+        .about-card {
+            width: 70%;
+        }
+        .headshot {
+            width: 60%;
+            height: auto;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .grid {
+            display: flex;
+            flex-direction: column;
+        }
+        .about-card {
+            width: 60%;
+        }
+        .headshot {
+            width: 50%;
+            height: auto;
+        }
+    }
 </style>
 @endsection
