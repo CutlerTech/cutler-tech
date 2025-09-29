@@ -29,7 +29,7 @@
                 <label for="password_confirmation">Confirm Password</label>
                 <input type="password" name="password_confirmation" id="password_confirmation" required>
             </div>
-            <button type="submit" class="btn btn-primary btn-full" style="color: black">Register</button>
+            <button type="submit" class="submit btn btn-primary btn-full" style="color: black">Register</button>
         </form>
         <div class="auth-links">
             <p>Already have an account? <a href="{{route('login')}}">Login here</a></p>
@@ -99,6 +99,39 @@
         background-color: #f8d7da;
         color: #721c24;
         border: 1px solid #f5c6cb;
+    }
+    button.submit {
+        -webkit-appearance: none;
+        appearance: none;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin-top: 0.75rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+        box-shadow: 0 6px 0 rgba(0,0,0,0.12);
+        user-select: none;
+        background-color: #00FF81;
+    }
+    button.submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 0 rgba(0,0,0,0.14);
+        background-color: #00FF81;
+    }
+    button.submit:active, button.submit:focus {
+        transform: translateY(2px) scale(0.995);
+        box-shadow: inset 0 3px 0 rgba(0,0,0,0.12);
+        outline: none;
+        background-color: #00FF81;
+    }
+    button.submit:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
     }
 </style>
 @endsection
