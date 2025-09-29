@@ -13,6 +13,12 @@ Route::get('/about', function (): View {
 Route::get('/skills', function (): View {
     return view('skills');
 })->name('skills');
+Route::get('/projects', function (): View {
+    return view('projects');
+})->name('projects');
+Route::get('/pricing', function (): View {
+    return view('pricing');
+})->name('pricing');
 Route::get('/requests', [RequestsController::class, 'create'])->name('requests.create');// Public request form
 Route::post('/requests', [RequestsController::class, 'store'])->name('requests.store');
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');// Authentication routes
