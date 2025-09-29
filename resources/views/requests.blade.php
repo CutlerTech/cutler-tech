@@ -50,7 +50,6 @@
         display: inline-block;
         padding: 0.5rem 1rem;
         margin-top: 0.75rem;
-        color: #fff;
         border: none;
         border-radius: 6px;
         cursor: pointer;
