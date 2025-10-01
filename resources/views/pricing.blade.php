@@ -10,6 +10,9 @@
         <ul>
             <li>Single person and small groups starting at $200/project</li>
             <li>Small businesses starting at $300/project</li>
+            <li>Designing website theme and brand</li>
+            <li>Content Creation</li>
+            <li>Website Maintance and Hosting - seperate small fee</li>
         </ul>
     </div>
     <div class="pricing-card">
@@ -17,6 +20,9 @@
         <ul>
             <li>Single person and small groups starting at $250/project</li>
             <li>Small businesses starting at $400/project</li>
+            <li>Database</li>
+            <li>Back-end Server</li>
+            <li>Front-end UI</li>
         </ul>
     </div>
     <div class="pricing-card">
@@ -42,12 +48,13 @@
         display: flex;
         flex-direction: column;
         border: 3px solid black;
-        justify-content: center;
         width: 100%;
         margin: 1rem auto;
-        text-align: center;
         padding: 0.5rem;
         background-color: #ffa900;
+    }
+    .pricing-card h3 {
+        text-align: center;
     }
     ul {
         margin: 0 auto;
