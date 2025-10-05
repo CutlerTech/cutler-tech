@@ -103,16 +103,16 @@
     .stat-card h3 {
         font-size: 2em;
         margin: 0 0 10px 0;
-        color: #333;
+        color: #FF6800;
     }
     .stat-card.pending h3 {
-        color: #f39c12;
+        color: #FFA900;
     }
     .stat-card.in-progress h3 {
-        color: #3498db;
+        color: #00F0FF;
     }
     .stat-card.completed h3 {
-        color: #27ae60;
+        color: #00FF81;
     }
     .recent-requests {
         background: white;
@@ -147,16 +147,20 @@
         font-weight: 500;
     }
     .badge-warning {
-        background-color: #fff3cd; color: #856404;
+        background-color: #fff3cd;
+        color: #856404;
     }
     .badge-info {
-        background-color: #d1ecf1; color: #0c5460;
+        background-color: #d1ecf1;
+        color: #0c5460;
     }
     .badge-success {
-        background-color: #d4edda; color: #155724;
+        background-color: #d4edda;
+        color: #155724;
     }
     .badge-danger {
-        background-color: #f8d7da; color: #721c24;
+        background-color: #f8d7da;
+        color: #721c24;
     }
     .quick-actions {
         background: white;
