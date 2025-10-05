@@ -5,7 +5,7 @@
 <div class="grid">
     <div class="project-card">
         <h2>CutlerTech Website</h2>
-        <a href="#"><img src="{{asset('images/project_image.png')}}" alt="CutlerTech Website link"></a>
+        <a href="#"><img src="{{asset('images/project_image.png')}}" alt="CutlerTech Website link" class="project-image"></a>
         <b>Web Development</b>
         <p>Stack: Laravel</p>
         <p>Developer: Alex Cutler</p>
@@ -22,16 +22,19 @@
         flex-direction: column;
         align-items: center;
         border: 3px solid black;
+        border-radius: 6px;
         width: 25%;
         margin: 1rem auto;
         text-align: center;
-        padding: 0.5rem;
+        padding: 2rem;
         background-color: #ffa900;
     }
-    .project-card img {
+    .project-image {
         width: 100%;
         height: auto;
-        padding: 1rem;
+        margin: 0.5rem auto;
+        border: 1px solid black;
+        border-radius: 6px;
     }
     p {
         padding: 0 !important;

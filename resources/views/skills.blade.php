@@ -8,6 +8,11 @@
         <small><b>CEO/Owner</b></small>
         <div class="card-lists">
             <div class="left-side">
+                <b>Stack</b>
+                <ul>
+                    <li>MEVN - MongoDB, Express, Vue, and Node</li>
+                    <li>MEAN - MongoDB, Express, Angular, and Node</li>
+                </ul>
                 <b>Languages</b>
                 <ul>
                     <li>Python</li>
@@ -24,6 +29,12 @@
                 </ul>
             </div>
             <div class="right-side">
+                <b>Specialities</b>
+                <ul>
+                    <li>Web Development</li>
+                    <li>Mobile Development</li>
+                    <li>Web Design</li>
+                </ul>
                 <b>Frameworks</b>
                 <ul>
                     <li>Flask</li>
@@ -53,6 +64,7 @@
         flex-direction: column;
         align-items: center;
         border: 3px solid black;
+        border-radius: 6px;
         margin: 2rem auto 0;
         width: 50%;
         padding: 0 2rem;
@@ -68,7 +80,7 @@
     .card-lists {
         display: flex;
         flex-direction: row;
-        gap: 10rem;
+        gap: 3rem;
         margin-top: 1rem;
     }
     @media screen and (max-width: 1200px) {

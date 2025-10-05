@@ -37,25 +37,25 @@
             <li>Fully native platform apps using Swift/Swift for iOS or Kotlin/Jetpack Compose for Android</li>
         </ul>
     </div>
-</div>
-<div class="consulting">
-    <h2>Software Consulting</h2>
-    <p>Professional guidance of software planning, designing, and implementation that drives real results.</p>
-    <ul>
-        <li>Hourly rate starting at $20/hour.</li>
-        <li>Software architecture and system design</li>
-        <li>Cloud migration and infrastructure planning</li>
-        <li>Custom app development strategy</li>
-        <li>API integration and automation</li>
-        <li>Performance optimization and scalability planning</li>
-        <li>Agile process and DevOps consulting</li>
-    </ul>
+    <div class="pricing-card">
+        <h3>Software Consulting</h3>
+        <p>Professional guidance of software planning, designing, and implementation that drives real results.</p>
+        <ul>
+            <li>Hourly rate starting at $20/hour.</li>
+            <li>Software architecture and system design</li>
+            <li>Cloud migration and infrastructure planning</li>
+            <li>Custom app development strategy</li>
+            <li>API integration and automation</li>
+            <li>Performance optimization and scalability planning</li>
+            <li>Agile process and DevOps consulting</li>
+        </ul>
+    </div>
 </div>
 <p id="footnote">All of these rates and plans are subject to specific needs and negotiations but will generally be close to, if not at least at, these starting prices and rates.</p>
 <style>
     .grid {
         display: grid;
-        grid-template-columns: repeat(3, 3fr);
+        grid-template-columns: repeat(2, 2fr);
         grid-template-rows: auto;
         gap: 0.75rem;
     }
@@ -63,26 +63,32 @@
         display: flex;
         flex-direction: column;
         border: 3px solid black;
+        border-radius: 6px;
         width: 100%;
-        margin: 1rem auto;
+        margin: 0.5rem auto;
         padding: 2rem;
         background-color: #ffa900;
     }
-    .pricing-card h3 {
+    h3, h2 {
         text-align: center;
+    }
+    h3 {
+        border-bottom: 2px solid black;
+        margin: 0 auto;
+        width: 50%;
     }
     ul {
         margin: 0 auto;
         padding: 0 auto;
     }
-    .consulting, h2 {
-        text-align: center;
-    }
     p {
         padding: 0 !important;
     }
+    .pricing-card p {
+        margin-top: 1rem;
+    }
     #footnote {
-        margin: 0;
+        margin: 1rem auto;
         font-size: small;
     }
 </style>

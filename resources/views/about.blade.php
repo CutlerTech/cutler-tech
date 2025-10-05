@@ -21,6 +21,7 @@
         flex-direction: column;
         align-items: center;
         border: 3px solid black;
+        border-radius: 6px;
         width: 30%;
         margin: 2rem auto 0;
         text-align: center;
@@ -45,7 +46,7 @@
     .headshot {
         width: auto;
         height: 300px;
-        border-radius: 5px;
+        border-radius: 6px;
     }
     @media screen and (max-width: 1200px) {
         .about-card {
