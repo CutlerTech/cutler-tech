@@ -91,5 +91,14 @@
         margin: 1rem auto;
         font-size: small;
     }
+    @media screen and (max-width: 992px) {
+        .grid {
+            display: flex;
+            flex-direction: column;
+        }
+        .pricing-card {
+            width: 70%;
+        }
+    }
 </style>
 @endsection

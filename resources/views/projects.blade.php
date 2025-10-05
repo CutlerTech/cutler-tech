@@ -39,5 +39,14 @@
     p {
         padding: 0 !important;
     }
+    @media screen and (max-width: 992px) {
+        .project-card {
+            width: 70%;
+        }
+        .grid {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 </style>
 @endsection
