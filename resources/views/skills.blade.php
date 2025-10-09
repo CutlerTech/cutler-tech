@@ -12,6 +12,7 @@
                 <ul>
                     <li>MEVN - MongoDB, Express, Vue, and Node</li>
                     <li>MEAN - MongoDB, Express, Angular, and Node</li>
+                    <li>MERN - MongoDB, Express, React, and Node</li>
                 </ul>
                 <b>Languages</b>
                 <ul>

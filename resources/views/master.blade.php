@@ -16,7 +16,7 @@
         <header>
             <nav id="navbar">
                 <div>
-                    <a href="{{route('home')}}"><img src="{{asset('images/logo.svg')}}" alt="Logo" id="logo"></a>
+                    <a href="{{route('home')}}" class="{{request()->routeIs('home') ? 'active' : ''}}"><img src="{{asset('images/logo.svg')}}" alt="Logo" id="logo"></a>
                 </div>
                 <div class="hamburger" id="hamburger">
                     <span></span>
