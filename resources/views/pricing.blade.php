@@ -2,7 +2,6 @@
 @section('title', 'Pricing')
 @section('content')
 <h1>Pricing</h1>
-<h2>Software Development</h2>
 <p>Hourly rate starting at $25/hour.  This is used for projects with unclear or shifting scopes or applying frequent iterations, revisions, or updates to projects.</p>
 <div class="grid">
     <div class="pricing-card">
@@ -13,7 +12,7 @@
             <li>Small businesses starting at $300/project</li>
             <li>Designing website theme and brand</li>
             <li>Content Creation</li>
-            <li>Website/Content Maintance and Hosting - seperate small fee charged per month for making sure the software and content is up to date and the site remains online</li>
+            <li>Website/Content Maintance and Hosting - seperate small fee of $20 charged per month for making sure the software and content is up to date and the site remains online</li>
         </ul>
     </div>
     <div class="pricing-card">
@@ -25,7 +24,7 @@
             <li>Database</li>
             <li>Back-end Server</li>
             <li>Front-end User Interface</li>
-            <li>Web Application Maintance and Hosting - seperate small fee charged per month for making sure the software is up to date and the site remains online</li>
+            <li>Web Application Maintance and Hosting - seperate small fee of $30 charged per month for making sure the software is up to date and working and the site remains online</li>
         </ul>
     </div>
     <div class="pricing-card">
