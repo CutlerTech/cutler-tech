@@ -29,7 +29,7 @@
                 <label for="password_confirmation">Confirm Password</label>
                 <input type="password" name="password_confirmation" id="password_confirmation" required>
             </div>
-            <button type="submit" class="submit btn btn-primary btn-full" style="color: black">Register</button>
+            <button type="submit" class="submit" style="color: black">Register</button>
         </form>
         <div class="auth-links">
             <p>Already have an account? <a href="{{route('login')}}">Login here</a></p>

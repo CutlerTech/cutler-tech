@@ -27,7 +27,7 @@
             <div class="form-group">
                 <label class="checkbox-label"><input type="checkbox" name="remember"> Remember me</label>
             </div>
-            <button type="submit" class="submit btn btn-primary btn-full" style="color: black;">Login</button>
+            <button type="submit" class="submit" style="color: black;">Login</button>
         </form>
         <div class="auth-links">
             <p>Don't have an account? <a href="{{route('register')}}">Register here</a></p>
