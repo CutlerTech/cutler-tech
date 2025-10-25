@@ -13,7 +13,7 @@
             <li>Small businesses starting at $300/project</li>
             <li>Designing website theme and brand</li>
             <li>Content Creation</li>
-            <li>Website Maintance and Hosting - seperate small fee similar to the hourly rate but will be at a discounted rate</li>
+            <li>Website/Content Maintance and Hosting - seperate small fee charged per month for making sure the software and content is up to date and the site remains online</li>
         </ul>
     </div>
     <div class="pricing-card">
