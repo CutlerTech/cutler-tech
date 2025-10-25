@@ -36,13 +36,14 @@
                     <li>Mobile Development</li>
                     <li>Web Design</li>
                 </ul>
-                <b>Frameworks</b>
+                <b>Frameworks and Tools</b>
                 <ul>
                     <li>Flask</li>
                     <li>Vue</li>
                     <li>Express</li>
                     <li>Node</li>
                     <li>Angular</li>
+                    <li>React</li>
                     <li>MongoDB</li>
                     <li>SQLite</li>
                     <li>MySQL</li>
