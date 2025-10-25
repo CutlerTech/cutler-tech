@@ -25,6 +25,7 @@
             <li>Database</li>
             <li>Back-end Server</li>
             <li>Front-end User Interface</li>
+            <li>Web Application Maintance and Hosting - seperate small fee charged per month for making sure the software is up to date and the site remains online</li>
         </ul>
     </div>
     <div class="pricing-card">
