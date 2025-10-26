@@ -133,5 +133,10 @@
         transform: none;
         box-shadow: none;
     }
+    @media screen and (max-width: 768px) {
+        .auth-form {
+            padding: 0;
+        }
+    }
 </style>
 @endsection

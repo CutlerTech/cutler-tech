@@ -63,10 +63,10 @@
             flex-direction: column;
         }
         .about-card {
-            width: 60%;
+            width: 100%;
         }
         .headshot {
-            width: 50%;
+            width: 75%;
             height: auto;
         }
     }

@@ -101,12 +101,12 @@
             width: 70%;
         }
     }
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 768px) {
         .pricing-card {
             width: 100%;
         }
         h3 {
-            width: 75%;
+            width: 100%;
         }
     }
 </style>

@@ -48,5 +48,10 @@
             flex-direction: column;
         }
     }
+    @media screen and (max-width: 768px) {
+        .project-card {
+            width: 100%;
+        }
+    }
 </style>
 @endsection
