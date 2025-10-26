@@ -15,19 +15,19 @@
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" value="{{old('name')}}" required>
+                <input type="text" name="name" id="name" value="{{old('name')}}" placeholder="Your Name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" name="email" id="email" value="{{old('email')}}" required>
+                <input type="email" name="email" id="email" value="{{old('email')}}" placeholder="Email Address" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
             </div>
             <div class="form-group">
                 <label for="password_confirmation">Confirm Password</label>
-                <input type="password" name="password_confirmation" id="password_confirmation" required>
+                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Password" required>
             </div>
             <button type="submit" class="submit" style="color: black">Register</button>
         </form>

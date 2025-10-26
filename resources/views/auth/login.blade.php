@@ -18,11 +18,11 @@
             @csrf
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" name="email" id="email" value="{{old('email')}}" required>
+                <input type="email" name="email" id="email" value="{{old('email')}}" placeholder="Email Address" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="password" id="password" placeholder="Password" required>
             </div>
             <div class="form-group">
                 <label class="checkbox-label"><input type="checkbox" name="remember"> Remember me</label>
