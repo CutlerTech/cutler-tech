@@ -76,6 +76,7 @@
         border-bottom: 2px solid black;
         margin: 0 auto;
         width: 50%;
+        padding-bottom: 0.25rem;
     }
     ul {
         margin: 0 auto;
@@ -98,6 +99,14 @@
         }
         .pricing-card {
             width: 70%;
+        }
+    }
+    @media screen and (max-width: 750px) {
+        .pricing-card {
+            width: 100%;
+        }
+        h3 {
+            width: 75%;
         }
     }
 </style>
