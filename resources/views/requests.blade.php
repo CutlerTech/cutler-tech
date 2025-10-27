@@ -39,8 +39,8 @@
     <input type="submit" name="submit" class="submit">
 </form>
 <style>
-    form {
-        width: 25%;
+    #requests-form {
+        width: 50%;
         border: 3px solid black;
         background-color: #FFA900;
     }
