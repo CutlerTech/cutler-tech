@@ -2,6 +2,47 @@
 
 This is the Laravel project source code for the CutlerTech website.
 
+## Local Setup Instructions for Development
+
+1. Clone the repository and cd into the repository folder.
+```bash
+git clone git@github.com:CutlerTech/cutler-tech.git
+cd cutler-tech
+```
+2. Install the composer dependencies.
+```bash
+composer install
+```
+3. Copy the .env.example file to be the .env file.
+```bash
+cp .env.example .env
+```
+4. Generate the Laravel application key.
+```bash
+php artisan key:generate
+```
+5. Create a MySQL database called cutler_tech.
+```sql
+CREATE DATABASE IF NOT EXISTS cutler_tech;
+```
+6. Create a database user with permissions for the cutler_tech database and save those credentials to the DB_USERNAME and DB_PASSWORD environment variables in the .env file.
+```sql
+CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'your_password';
+GRANT ALL PRIVILEGES ON cutler_tech.* TO 'new_user'@'localhost';
+```
+7. Run database migrations.
+```bash
+php artisan migrate
+```
+8. (Optional) Install npm dependencies.
+```bash
+npm install
+```
+9. Run the Laravel application server.
+```bash
+php artisan server
+```
+
 ## Screenshots
 
 ### Home Screen
