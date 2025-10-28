@@ -113,27 +113,27 @@ php artisan server
 
 ## RESTful Endpoints
 
-| Name                                    | Method | Path                                    | Middleware | Route Name                  | Controller/Action                          |
-| --------------------------------------- | ------ | --------------------------------------- | ---------- | --------------------------- | ------------------------------------------ |
-| Retrieve home page                      | GET    | /                                       | N/A        | home                        | N/A                                        |
-| Retrieve about page                     | GET    | /about                                  | N/A        | about                       | N/A                                        |
-| Retrieve skills page                    | GET    | /skills                                 | N/A        | skills                      | N/A                                        |
-| Retrieve projects page                  | GET    | /projects                               | N/A        | projects                    | N/A                                        |
-| Retrieve pricing page                   | GET    | /pricing                                | N/A        | pricing                     | N/A                                        |
-| Retrieve requests page                  | GET    | /requests                               | N/A        | requests.create             | RequestController - create                 |
-| Create request member                   | POST   | /requests                               | N/A        | requests.store              | RequestController - store                  |
-| Retrieve login page                     | GET    | /login                                  | N/A        | login                       | AuthController - showLogin                 |
-| Create user session                     | POST   | /login                                  | N/A        | login.post                  | AuthController - login                     |
-| Retrieve register page                  | GET    | /register                               | N/A        | register                    | AuthController - showRegister              |
-| Create user member                      | POST   | /register                               | N/A        | register.post               | AuthController - register                  |
-| Delete user session                     | POST   | /logout                                 | N/A        | logout                      | AuthController - logout                    |
-| Retrieve dashboard page                 | GET    | /dashboard                              | Auth       | dashboard                   | DashboardController - index                |
-| Retrieve requests collection            | GET    | /admin/requests                         | Auth       | requests.index              | RequestController - index                  |
-| Retrieve request member                 | GET    | /admin/requests/{request}               | Auth       | requests.show               | RequestController - show                   |
-| Delete request member                   | DELETE | /admin/requests/{request}               | Auth       | requests.destroy            | RequestController - destroy                |
-| Update request member status            | PATCH  | /admin/requests/{request}/status        | Auth       | requests.updateStatus       | RequestController - updateStatus           |
-| Retrieve notifications collection       | GET    | /notifications                          | Auth       | notifications.index         | RequestController - notifications          |
-| Update notification member as read      | GET    | /notifications/{notification}/mark-read | Auth       | notifications.mark-read     | RequestController - markAsRead             |
-| Update all notification members as read | GET    | /notifications/mark-all-read            | Auth       | notifications.mark-all-read | RequestController - markAllAsRead          |
-| Delete notification member              | DELETE | /notifications/{notification}           | Auth       | notifications.delete        | RequestController - deleteNotification     |
-| Delete all notification members         | DELETE | /notifications                          | Auth       | notifications.delete-all    | RequestController - deleteAllNotifications |
+| Name                                    | Method | Path                                      | Middleware | Route Name                  | Controller/Action                          |
+| --------------------------------------- | ------ | ----------------------------------------- | ---------- | --------------------------- | ------------------------------------------ |
+| Retrieve home page                      | GET    | /                                         | N/A        | home                        | N/A                                        |
+| Retrieve about page                     | GET    | /about                                    | N/A        | about                       | N/A                                        |
+| Retrieve skills page                    | GET    | /skills                                   | N/A        | skills                      | N/A                                        |
+| Retrieve projects page                  | GET    | /projects                                 | N/A        | projects                    | N/A                                        |
+| Retrieve pricing page                   | GET    | /pricing                                  | N/A        | pricing                     | N/A                                        |
+| Retrieve requests page                  | GET    | /requests                                 | N/A        | requests.create             | RequestController - create                 |
+| Create request member                   | POST   | /requests                                 | N/A        | requests.store              | RequestController - store                  |
+| Retrieve login page                     | GET    | /login                                    | N/A        | login                       | AuthController - showLogin                 |
+| Create user session                     | POST   | /login                                    | N/A        | login.post                  | AuthController - login                     |
+| Retrieve register page                  | GET    | /register                                 | N/A        | register                    | AuthController - showRegister              |
+| Create user member                      | POST   | /register                                 | N/A        | register.post               | AuthController - register                  |
+| Delete user session                     | POST   | /logout                                   | N/A        | logout                      | AuthController - logout                    |
+| Retrieve dashboard page                 | GET    | /dashboard                                | Auth       | dashboard                   | DashboardController - index                |
+| Retrieve requests collection            | GET    | /admin/requests                           | Auth       | requests.index              | RequestController - index                  |
+| Retrieve request member                 | GET    | /admin/requests/{*request*}               | Auth       | requests.show               | RequestController - show                   |
+| Delete request member                   | DELETE | /admin/requests/{*request*}               | Auth       | requests.destroy            | RequestController - destroy                |
+| Update request member status            | PATCH  | /admin/requests/{*request*}/status        | Auth       | requests.updateStatus       | RequestController - updateStatus           |
+| Retrieve notifications collection       | GET    | /notifications                            | Auth       | notifications.index         | RequestController - notifications          |
+| Update notification member as read      | GET    | /notifications/{*notification*}/mark-read | Auth       | notifications.mark-read     | RequestController - markAsRead             |
+| Update all notification members as read | GET    | /notifications/mark-all-read              | Auth       | notifications.mark-all-read | RequestController - markAllAsRead          |
+| Delete notification member              | DELETE | /notifications/{*notification*}           | Auth       | notifications.delete        | RequestController - deleteNotification     |
+| Delete all notification members         | DELETE | /notifications                            | Auth       | notifications.delete-all    | RequestController - deleteAllNotifications |
