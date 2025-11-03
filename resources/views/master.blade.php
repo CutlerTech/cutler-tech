@@ -31,7 +31,7 @@
                         <li><a href="{{route('pricing')}}" class="{{request()->routeIs('pricing') ? 'active' : ''}}">Pricing</a></li>
                         <li><a href="{{route('requests.create')}}" class="{{request()->routeIs('requests.create') ? 'active' : ''}}">Requests</a></li>
                         @auth
-                            @if (Auth::user())
+                            @if (Auth::user() && Auth::user()->is_admin)
                                 <li><a href="{{route('dashboard')}}" class="{{request()->routeIs('dashboard') ? 'active' : ''}}">Dashboard</a></li>
                                 <li class="notification-menu">
                                     <a href="{{route('notifications.index')}}" class="{{request()->routeIs('notifications.*') ? 'active' : ''}}">
@@ -55,6 +55,10 @@
                             </form>
                         </li>
                     @endauth
+                    <ul>
+                        <li><a href="{{route('login')}}" class="{{request()->routeIs('login') ? 'active' : ''}}">Login</a></li>
+                        <li><a href="{{route('register')}}" class="{{request()->routeIs('register') ? 'active' : ''}}">Register</a></li>
+                    </ul>
                 </div>
             </nav>
         </header>
@@ -124,6 +128,14 @@
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
+        }
+        #auth-nav ul li a:hover {
+            background-color: #FF6800;
+            color: black;
+            text-decoration: none;
+            padding: 1rem;
+            transition: background-color 1s ease;
+            border-radius: 5px;
         }
     </style>
     <script>

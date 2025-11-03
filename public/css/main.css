@@ -49,7 +49,7 @@ header {
     width: 100px;
     height: auto;
 }
-#main-nav ul {
+#main-nav ul, #auth-nav ul {
     display: flex;
     flex-direction: row;
 }
@@ -120,7 +120,7 @@ footer {
 .btn-full {
     width: 100%;
 }
-#main-nav ul li a.active {
+#main-nav ul li a.active, #auth-nav ul li a.active {
     background-color: #FFA900;
     padding: 1rem;
     font-weight: bold;
