@@ -27,12 +27,12 @@ class UserFactory extends Factory {
         ];
     }
     public function admin(): static {
-        return $this->state(fn (array $attributes) => ['is_admin' => true]);
+        return $this->state(fn (array $attributes): array => ['is_admin' => true]);
     }
     /**
      * Indicate that the model's email address should be unverified.
      */
     public function unverified(): static {
-        return $this->state(fn (array $attributes) => ['email_verified_at' => null]);
+        return $this->state(fn (array $attributes): array => ['email_verified_at' => null]);
     }
 }

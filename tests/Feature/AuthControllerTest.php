@@ -2,10 +2,11 @@
 namespace Tests\Feature;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 class AuthControllerTest extends TestCase {
-    use RefreshDatabase;
+    use RefreshDatabase, WithoutMiddleware;
     /** @test */
     public function user_can_view_login_form(): void {
         $response = $this->get('/login');
@@ -63,6 +64,7 @@ class AuthControllerTest extends TestCase {
     }
     /** @test */
     public function authenticated_user_can_logout(): void {
+        /** @var \App\Models\User $user */
         $user = User::factory()->create();
         $this->actingAs($user);
         $response = $this->post('/logout');

@@ -8,6 +8,7 @@ class DashboardControllerTest extends TestCase {
     use RefreshDatabase;
     /** @test */
     public function authenticated_user_can_view_dashboard(): void {
+        /** @var \App\Models\User $user */
         $user = User::factory()->create();
         // Create test data
         Requests::factory()->count(3)->create(['status' => 'pending']);
@@ -27,6 +28,7 @@ class DashboardControllerTest extends TestCase {
     }
     /** @test */
     public function dashboard_displays_correct_statistics(): void {
+        /** @var \App\Models\User $user */
         $user = User::factory()->create();
         Requests::factory()->count(5)->create(['status' => 'pending']);
         Requests::factory()->count(3)->create(['status' => 'completed']);
