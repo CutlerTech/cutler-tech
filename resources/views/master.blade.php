@@ -30,6 +30,8 @@
                         <li><a href="{{route('projects')}}" class="{{request()->routeIs('projects') ? 'active' : ''}}">Projects</a></li>
                         <li><a href="{{route('pricing')}}" class="{{request()->routeIs('pricing') ? 'active' : ''}}">Pricing</a></li>
                         <li><a href="{{route('requests.create')}}" class="{{request()->routeIs('requests.create') ? 'active' : ''}}">Requests</a></li>
+                        <li><a href="{{route('login')}}" class="{{request()->routeIs('login') ? 'active' : ''}}">Login</a></li>
+                        <li><a href="{{route('register')}}" class="{{request()->routeIs('register') ? 'active' : ''}}">Register</a></li>
                         @auth
                             @if (Auth::user() && Auth::user()->is_admin)
                                 <li><a href="{{route('dashboard')}}" class="{{request()->routeIs('dashboard') ? 'active' : ''}}">Dashboard</a></li>
@@ -55,10 +57,6 @@
                             </form>
                         </li>
                     @endauth
-                    <ul>
-                        <li><a href="{{route('login')}}" class="{{request()->routeIs('login') ? 'active' : ''}}">Login</a></li>
-                        <li><a href="{{route('register')}}" class="{{request()->routeIs('register') ? 'active' : ''}}">Register</a></li>
-                    </ul>
                 </div>
             </nav>
         </header>
