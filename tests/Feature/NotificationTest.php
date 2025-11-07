@@ -4,13 +4,13 @@ use App\Models\Requests;
 use App\Models\User;
 use App\Notifications\NewRequest;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
 class NotificationTest extends TestCase {
-    use RefreshDatabase;
+    use RefreshDatabase, WithoutMiddleware;
     /** @test */
     public function authenticated_user_can_view_notifications(): void {
         $user = User::factory()->create();
-        // Create a notification
         $request = Requests::factory()->create();
         $user->notify(new NewRequest($request));
         $response = $this->actingAs($user)->get('/notifications');
@@ -32,13 +32,11 @@ class NotificationTest extends TestCase {
     public function user_can_mark_all_notifications_as_read(): void {
         $user = User::factory()->create();
         $request = Requests::factory()->create();
-        // Create multiple notifications
         $user->notify(new NewRequest($request));
         $user->notify(new NewRequest($request));
         $response = $this->actingAs($user)->get('/notifications/mark-all-read');
         $response->assertRedirect();
         $response->assertSessionHas('success', 'All notifications marked as read.');
-        // Refresh user to get updated notifications
         $user->refresh();
         $this->assertEquals(0, $user->unreadNotifications->count());
     }

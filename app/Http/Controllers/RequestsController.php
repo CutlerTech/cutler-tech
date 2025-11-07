@@ -46,31 +46,31 @@ class RequestsController extends Controller {
     /**
      * Display a specific project request
      */
-    public function show(Requests $request): View {
+    public function show(Requests $projectRequest): View {
         $statusOptions = Requests::getStatusOptions();
-        return view('requests.show', compact('request', 'statusOptions'));
+        return view('requests.show', ['projectRequest' => $projectRequest, 'statusOptions' => $statusOptions, 'request' => $projectRequest]);
     }
     /**
      * Update request status
      */
-    public function updateStatus(Request $httpRequest, Requests $request): RedirectResponse {
+    public function updateStatus(Request $httpRequest, Requests $projectRequest): RedirectResponse {
         $validatedData = $httpRequest->validate(['status' => 'required|in:pending,in_progress,completed,cancelled']);
-        $request->status = $validatedData['status'];
-        $request->save();
+        $projectRequest->status = $validatedData['status'];
+        $projectRequest->save();
         return redirect()->back()->with('success', 'Request status updated successfully!');
     }
     /**
      * Delete a project request
      */
-    public function destroy(Requests $request): RedirectResponse {
-        $request->delete();
+    public function destroy(Requests $projectRequest): RedirectResponse {
+        $projectRequest->delete();
         return redirect()->route('requests.index')->with('success', 'Request deleted successfully!');
     }
     /**
      * Display notifications for authenticated user
      */
     public function notifications(): View {
-        $user = auth()->user(); //Figure out why VS Code is throwing an error.
+        $user = auth()->user();
         $notifications = $user->notifications()->paginate(10);
         return view('notifications.index', compact('notifications'));
     }
@@ -78,7 +78,7 @@ class RequestsController extends Controller {
      * Mark notification as read
      */
     public function markAsRead($notificationId): RedirectResponse {
-        $user = auth()->user(); //Figure out why VS Code is throwing an error.
+        $user = auth()->user();
         $notification = $user->notifications()->find($notificationId);
         if ($notification) {
             $notification->markAsRead();
@@ -89,7 +89,7 @@ class RequestsController extends Controller {
      * Mark all notifications as read
      */
     public function markAllAsRead(): RedirectResponse {
-        auth()->user()->unreadNotifications->markAsRead(); //Figure out why VS Code is throwing an error.
+        auth()->user()->unreadNotifications->markAsRead();
         return redirect()->back()->with('success', 'All notifications marked as read.');
     }
     /**

@@ -6,6 +6,7 @@ use App\Notifications\NewRequest;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Notification;
 use Tests\TestCase;
+use App\Http\Middleware\VerifyCsrfTokenMiddleware;
 class RequestsControllerTest extends TestCase {
     use RefreshDatabase;
     /** @test */
@@ -16,6 +17,7 @@ class RequestsControllerTest extends TestCase {
     }
     /** @test */
     public function guest_can_submit_valid_request(): void {
+        $this->withoutMiddleware();
         Notification::fake();
         $admin = User::factory()->create(['is_admin' => true]);
         $requestData = [
@@ -38,12 +40,13 @@ class RequestsControllerTest extends TestCase {
     }
     /** @test */
     public function request_submission_requires_required_fields(): void {
+        $this->withoutMiddleware();
         $response = $this->post('/requests', []);
         $response->assertSessionHasErrors(['name', 'goal', 'email']);
     }
     /** @test */
     public function authenticated_user_can_view_requests_index(): void {
-        $user = User::factory()->create();
+        $user = User::factory()->create(['is_admin' => true]);
         Requests::factory()->count(3)->create();
         $response = $this->actingAs($user)->get('/admin/requests');
         $response->assertStatus(200);
@@ -52,27 +55,27 @@ class RequestsControllerTest extends TestCase {
     }
     /** @test */
     public function authenticated_user_can_view_specific_request(): void {
-        $user = User::factory()->create();
+        $user = User::factory()->create(['is_admin' => true]);
         $request = Requests::factory()->create();
         $response = $this->actingAs($user)->get("/admin/requests/{$request->id}");
         $response->assertStatus(200);
         $response->assertViewIs('requests.show');
-        $response->assertViewHas(['request', 'statusOptions']);
+        $response->assertViewHas(['projectRequest', 'statusOptions']);
     }
     /** @test */
     public function authenticated_user_can_update_request_status(): void {
-        $user = User::factory()->create();
+        $user = User::factory()->create(['is_admin' => true]);
         $request = Requests::factory()->create(['status' => 'pending']);
-        $response = $this->actingAs($user)->patch("/admin/requests/{$request->id}/status", ['status' => 'in_progress']);
+        $response = $this->actingAs($user)->withoutMiddleware(VerifyCsrfTokenMiddleware::class)->patch("/admin/requests/{$request->id}/status", ['status' => 'in_progress']);
         $response->assertRedirect();
         $response->assertSessionHas('success', 'Request status updated successfully!');
         $this->assertDatabaseHas('requests', ['id' => $request->id, 'status' => 'in_progress']);
     }
     /** @test */
     public function authenticated_user_can_delete_request(): void {
-        $user = User::factory()->create();
+        $user = User::factory()->create(['is_admin' => true]);
         $request = Requests::factory()->create();
-        $response = $this->actingAs($user)->delete("/admin/requests/{$request->id}");
+        $response = $this->actingAs($user)->withoutMiddleware(VerifyCsrfTokenMiddleware::class)->delete("/admin/requests/{$request->id}");
         $response->assertRedirect(route('requests.index'));
         $response->assertSessionHas('success', 'Request deleted successfully!');
         $this->assertDatabaseMissing('requests', ['id' => $request->id]);

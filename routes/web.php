@@ -29,9 +29,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['auth', 'admin'])->group(function (): void {// Protected routes (require authentication)
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/admin/requests', [RequestsController::class, 'index'])->name('requests.index');// Admin request management
-    Route::get('/admin/requests/{request}', [RequestsController::class, 'show'])->name('requests.show');
-    Route::delete('/admin/requests/{request}', [RequestsController::class, 'destroy'])->name('requests.destroy');
-    Route::patch('/admin/requests/{request}/status', [RequestsController::class, 'updateStatus'])->name('requests.updateStatus');
+    Route::get('/admin/requests/{projectRequest}', [RequestsController::class, 'show'])->name('requests.show');
+    Route::delete('/admin/requests/{projectRequest}', [RequestsController::class, 'destroy'])->name('requests.destroy');
+    Route::patch('/admin/requests/{projectRequest}/status', [RequestsController::class, 'updateStatus'])->name('requests.updateStatus');
     Route::get('/notifications', [RequestsController::class, 'notifications'])->name('notifications.index');// Notification routes
     Route::get('/notifications/{notification}/mark-read', [RequestsController::class, 'markAsRead'])->name('notifications.mark-read');
     Route::get('/notifications/mark-all-read', [RequestsController::class, 'markAllAsRead'])->name('notifications.mark-all-read');

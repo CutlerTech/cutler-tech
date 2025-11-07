@@ -8,7 +8,7 @@ class UserModelTest extends TestCase {
     /** @test */
     public function it_has_correct_fillable_attributes(): void {
         $user = new User();
-        $expected = ['name', 'email', 'password'];
+        $expected = ['name', 'email', 'password', 'is_admin'];
         $this->assertEquals($expected, $user->getFillable());
     }
     /** @test */
