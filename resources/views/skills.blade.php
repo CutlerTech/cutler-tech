@@ -20,7 +20,7 @@
                     <li>C</li>
                     <li>C++</li>
                     <li>C#</li>
-                    <li>RISC-V Assembly</li>
+                    <li>32-bit RISC-V Assembly</li>
                     <li>JavaScript</li>
                     <li>TypeScript</li>
                     <li>Swift</li>
@@ -38,18 +38,18 @@
                 </ul>
                 <b>Frameworks and Tools</b>
                 <ul>
-                    <li>Flask</li>
-                    <li>Vue</li>
-                    <li>Express</li>
-                    <li>Node</li>
-                    <li>Angular</li>
-                    <li>React</li>
-                    <li>MongoDB</li>
-                    <li>SQLite</li>
-                    <li>MySQL</li>
-                    <li>Laravel</li>
-                    <li>Unity</li>
-                    <li>Wordpress</li>
+                    <li>Flask (Python)</li>
+                    <li>Vue (JavaScript)</li>
+                    <li>Express (JavaScript)</li>
+                    <li>Node (JavaScript)</li>
+                    <li>Angular (TypeScript)</li>
+                    <li>React (JavaScript/JSX)</li>
+                    <li>MongoDB (Database)</li>
+                    <li>SQLite (Database)</li>
+                    <li>MySQL (Database)</li>
+                    <li>Laravel (PHP)</li>
+                    <li>Unity (C#)</li>
+                    <li>Wordpress (PHP)</li>
                 </ul>
             </div>
         </div>
