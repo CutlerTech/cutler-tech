@@ -193,4 +193,16 @@ footer {
     #requests-form {
         width: 100%;
     }
+    #main-nav { /* Added: ensure mobile hamburger menu fills viewport and is scrollable */
+        position: fixed;          /* overlay page content */
+        inset: 0 auto auto 0;     /* top:0; left:0; right:0; keep bottom auto */
+        height: 100vh;            /* full viewport height */
+        overflow-y: auto;         /* enable scrolling for overflowing links */
+        -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+        z-index: 9999;            /* stay above other content */
+        background: inherit;      /* preserve current bg (or set a color if needed) */
+    }
+    #main-nav ul { /* give some extra bottom padding so last links aren't hidden behind footer/logout */
+        padding-bottom: 4rem;
+    }
 }
