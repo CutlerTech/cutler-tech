@@ -188,11 +188,6 @@ footer {
     #requests-form {
         width: 100%;
     }
-}
-@media screen and (max-width: 768px) {
-    #requests-form {
-        width: 100%;
-    }
     #main-nav { /* Added: ensure mobile hamburger menu fills viewport and is scrollable */
         position: fixed;          /* overlay page content */
         inset: 0 auto auto 0;     /* top:0; left:0; right:0; keep bottom auto */
@@ -204,5 +199,10 @@ footer {
     }
     #main-nav ul { /* give some extra bottom padding so last links aren't hidden behind footer/logout */
         padding-bottom: 4rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    #requests-form {
+        width: 100%;
     }
 }

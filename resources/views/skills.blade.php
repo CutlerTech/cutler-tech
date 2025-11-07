@@ -102,13 +102,14 @@
             gap: 3rem;
         }
     }
-    @media screen and (max-width: 408px) {
+    @media screen and (max-width: 599px) {
         .card-lists {
             display: inline;
         }
         .skill-card {
             width: 100%;
             padding: 0 4rem;
+            margin: 0;
         }
     }
 </style>
