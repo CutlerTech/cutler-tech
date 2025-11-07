@@ -74,5 +74,10 @@
         transform: none;
         box-shadow: none;
     }
+    @media screen and (max-width: 599px) {
+        #requests-form {
+            width: 100%;
+        }
+    }
 </style>
 @endsection
