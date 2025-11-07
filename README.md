@@ -110,8 +110,8 @@ php artisan server
 - Email: varchar(255) and unique
 - Email Verified At (email_verified_at): timestamp
 - Password: varchar(255)
-- Remember Token (remember_token) varchar(100)
-- Is Admin (is_admin) tinyint(1)
+- Remember Token (remember_token): varchar(100)
+- Is Admin (is_admin): tinyint(1)
 - Created At (created_at): timestamp
 - Updated At (updated_at): timestamp
 
