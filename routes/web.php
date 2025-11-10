@@ -21,10 +21,12 @@ Route::get('/pricing', function (): View {
 })->name('pricing');
 Route::get('/requests', [RequestsController::class, 'create'])->name('requests.create');// Public request form
 Route::post('/requests', [RequestsController::class, 'store'])->name('requests.store');
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');// Authentication routes
-Route::post('/login', [AuthController::class, 'login'])->name('login.post');
-Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
-Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+Route::middleware('guest')->group(function (): void {// Authentication routes (only for guests)
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+    Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+    Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+});
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['auth', 'admin'])->group(function (): void {// Protected routes (require authentication)
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
