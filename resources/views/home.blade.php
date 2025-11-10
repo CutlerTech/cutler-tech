@@ -1,6 +1,6 @@
 @extends('master')
-@section('title', 'Cutler Tech')
+@section('title', 'Cutler Code')
 @section('content')
-<h1>CutlerTech</h1>
-<p>Welcome to Cutler Tech where we help kickstart your software and online presence.</p>
+<h1>Cutler Code</h1>
+<p>Welcome to Cutler Code where we help kickstart your software and online presence.</p>
 @endsection

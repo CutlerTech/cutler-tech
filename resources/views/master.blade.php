@@ -64,7 +64,7 @@
             @yield('content')
         </main>
         <footer>
-            <p>Copyright CutlerTech 2025 &copy;</p>
+            <p>Copyright Cutler Code 2025 &copy;</p>
             <p>For inquiry questions, please reach out over email to <a style="color: #FF6800" href="mailto:calexcutler@gmail.com">calexcutler@gmail.com</a>.</p>
         </footer>
     </body>

@@ -7,7 +7,7 @@
         <img src="{{asset('images/Alex_Headshot.jpg')}}" alt="Alex Cutler Headshot" class="headshot">
         <h4>Alex Cutler</h4>
         <b>CEO/Owner</b>
-        <p>Alex is the software brains behind CutlerTech.</p>
+        <p>Alex is the software brains behind Cutler Code.</p>
     </div>
 </div>
 <style>

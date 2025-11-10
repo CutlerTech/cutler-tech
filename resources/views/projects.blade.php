@@ -4,7 +4,7 @@
 <h1>Projects</h1>
 <div class="grid">
     <div class="project-card">
-        <h2>CutlerTech Website</h2>
+        <h2>Cutler Code Website</h2>
         <a href="#"><img src="{{asset('images/project_image.png')}}" alt="CutlerTech Website link" class="project-image"></a>
         <b>Web Development</b>
         <p>Stack: Laravel</p>
