@@ -1,6 +1,6 @@
-# CutlerTech Business Website
+# Cutler Code Business Website
 
-This is the Laravel project source code for the CutlerTech website.
+This is the Laravel project source code for the Cutler Code website.
 
 ## Prerequisites
 
@@ -10,8 +10,8 @@ This website runs on Laravel 12, which requires using at least version 8.2 of PH
 
 1. Clone the repository and cd into the repository folder.
 ```bash
-git clone git@github.com:CutlerTech/cutler-tech.git
-cd cutler-tech
+git clone git@github.com:CutlerCode/cutler-code.git
+cd cutler-code
 ```
 2. Install the composer dependencies.
 ```bash
@@ -25,14 +25,14 @@ cp .env.example .env
 ```bash
 php artisan key:generate
 ```
-5. Create a MySQL database called cutler_tech.
+5. Create a MySQL database called cutler_code.
 ```sql
-CREATE DATABASE IF NOT EXISTS cutler_tech;
+CREATE DATABASE IF NOT EXISTS cutler_code;
 ```
-6. Create a database user with permissions for the cutler_tech database and save those credentials to the DB_USERNAME and DB_PASSWORD environment variables in the .env file.
+6. Create a database user with permissions for the cutler_code database and save those credentials to the DB_USERNAME and DB_PASSWORD environment variables in the .env file.
 ```sql
 CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'your_password';
-GRANT ALL PRIVILEGES ON cutler_tech.* TO 'new_user'@'localhost';
+GRANT ALL PRIVILEGES ON cutler_code.* TO 'new_user'@'localhost';
 ```
 7. Run database migrations.
 ```bash
